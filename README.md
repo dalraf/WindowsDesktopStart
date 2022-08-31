@@ -1,2 +1,3 @@
-# WindowsServerStart
-Install programs for windows servers
+# WindowsDesktopStart
+
+Install programs for windows desktops
