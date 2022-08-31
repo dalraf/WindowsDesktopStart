@@ -26,18 +26,18 @@ menu = [
     ["11", "- Instalar Caixa", install_caixa],
 ]
 
-for i in menu:
-    print(i[0], i[1])
-print('12 - Instalar tudo')
-
-status = input("Digite a opção desejada:")
-
-if status == '12':
+while(True):
     for i in menu:
-        i[2]()
-else:
-    for i in menu:
-        if status == i[0]:
+        print(i[0], i[1])
+    print('12 - Instalar tudo')
+
+    status = input("Digite a opção desejada:")
+
+    if status == '12':
+        for i in menu:
             i[2]()
+    else:
+        for i in menu:
+            if status == i[0]:
+                i[2]()
 
-input("Instalação finalizada, pressione qualquer tecla para fechar...")

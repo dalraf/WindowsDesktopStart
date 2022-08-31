@@ -65,7 +65,7 @@ def install_anydesk():
 
 # Instalacao do Caixa
 def install_caixa():
-    caixa_file_path = path_local / caixa_file_name
+    caixa_file_path = (path_local / caixa_file_name).absolute()
     download_install_google(
         "Caixa",
         caixa_google_id,
