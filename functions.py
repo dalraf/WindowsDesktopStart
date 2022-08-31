@@ -28,7 +28,7 @@ def install_chocolatey_list(choco_install_list):
         print(e.args[0])
 
 
-def download_file_from_google_drive(self, id, destination):
+def download_file_from_google_drive(id, destination):
     def get_confirm_token(response):
         for key, value in response.cookies.items():
             if key.startswith("download_warning"):
