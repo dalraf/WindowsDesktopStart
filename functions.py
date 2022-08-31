@@ -70,11 +70,11 @@ def download_install_google(nome, id, file_name, cmd):
     if file_path.exists():
         print('Arquivo existente não executando download')
     else:
-        try:
-            download_file_from_google_drive(id, file_path)
-            execute(cmd)
-        except Exception as e:
-            print(e.args[0])
+        download_file_from_google_drive(id, file_path)
+    try:
+        execute(cmd)
+    except Exception as e:
+        print(e)
 
 
 def download_install_google_zip(nome, id, file_name, cmd):
@@ -83,10 +83,10 @@ def download_install_google_zip(nome, id, file_name, cmd):
     if file_path.exists():
         print('Arquivo existente não executando download')
     else:
-        try:
-            download_file_from_google_drive(id, file_path)
-            with zipfile.ZipFile(file_path, "r") as citrixzip:
-                citrixzip.extractall(path_local)
-            execute(cmd)
-        except Exception as e:
-            print(e.args[0])
+        download_file_from_google_drive(id, file_path)
+    try:
+        with zipfile.ZipFile(file_path, "r") as citrixzip:
+            citrixzip.extractall(path_local)
+        execute(cmd)
+    except Exception as e:
+        print(e)

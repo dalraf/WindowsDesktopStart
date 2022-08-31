@@ -55,12 +55,11 @@ download_install_google(
 )
 
 # Instalacao Citrix10
-citrix_file_path = path_local / citrix_file_name
 citrix_path_execution = path_local / "Citrix10" / "Versao 10.1" / "PN_10_1.msi"
 download_install_google_zip(
     "Citrix",
     citrix_google_id,
-    citrix_file_path,
+    citrix_file_name,
     f"msiexec /i {citrix_path_execution}",
 )
 
