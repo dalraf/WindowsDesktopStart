@@ -1,15 +1,6 @@
 from pathlib import Path
 
 # Chocolatey install list
-choco_install_list = [
-    "googlechrome",
-    "firefox",
-    "spark",
-    'jre8 -PackageParameters "/exclude:64" -y',
-    "teamviewer",
-    "anydesk.install",
-    "adobereader",
-]
 
 # Parametros Chocolatey
 ps_script_url = "https://community.chocolatey.org/install.ps1"

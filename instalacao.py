@@ -1,6 +1,5 @@
 import urllib.request
 from vars import (
-    choco_install_list,
     ps_script_name,
     ps_script_url,
     caixa_google_id,
@@ -33,14 +32,33 @@ def install_chocolatey():
         print(e.args[0])
 
 
-def install_chocolatey_list():
-    print("Instalando programas padrão...")
+def install_chocolatey_program(programa, cmd):
+    print(f'Instalando {programa}')
     try:
-        for programa in choco_install_list:
-            execute("choco install -y " + programa)
+        execute("choco install -y " + cmd)
     except Exception as e:
         print(e.args[0])
 
+def install_google_chrome():
+    install_chocolatey_program('Chrome', 'googlechrome')
+
+def install_firefox():
+    install_chocolatey_program('Firefox', 'firefox')
+
+def install_spark():
+    install_chocolatey_program('Spark', 'spark')
+
+def install_java():
+    install_chocolatey_program('Java 8 32bits', 'jre8 -PackageParameters "/exclude:64" -y')
+
+def install_teamviewer():
+    install_chocolatey_program('Teamviewer', 'teamviewer')
+
+def install_anydesk():
+    install_chocolatey_program('Anydesk', 'anydesk.install')
+
+def install_anydesk():
+    install_chocolatey_program('AdobeReader', 'adobereader')
 
 # Instalacao do Caixa
 def install_caixa():

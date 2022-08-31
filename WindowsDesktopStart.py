@@ -1,6 +1,11 @@
 from instalacao import (
     install_chocolatey,
-    install_chocolatey_list,
+    install_google_chrome,
+    install_firefox,
+    install_java,
+    install_spark,
+    install_anydesk,
+    install_teamviewer,
     install_adobeair,
     install_sisbr20,
     install_citrix10,
@@ -8,7 +13,12 @@ from instalacao import (
 )
 
 install_chocolatey()
-install_chocolatey_list()
+install_google_chrome()
+install_firefox()
+install_java()
+install_spark()
+install_anydesk()
+install_teamviewer()
 install_adobeair()
 install_sisbr20()
 install_citrix10()

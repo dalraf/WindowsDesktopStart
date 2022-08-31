@@ -2,7 +2,7 @@ import requests
 from pathlib import Path
 import subprocess
 import zipfile
-from vars import path_local, ps_script_url, ps_script_name, choco_install_list
+from vars import path_local
 import platform
 
 def execute(cmd):
