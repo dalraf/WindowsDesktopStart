@@ -1,5 +1,4 @@
 import requests
-from pathlib import Path
 import subprocess
 import zipfile
 from vars import path_local
