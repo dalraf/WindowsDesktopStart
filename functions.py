@@ -2,6 +2,31 @@ import requests
 from pathlib import Path
 import subprocess
 import zipfile
+import urllib.request
+from vars import path_local
+
+
+def install_chocolatey(ps_script_url, ps_script_name):
+    print("Instalando Chocolatey...")
+    try:
+        ps_script_path = path_local / ps_script_name
+        urllib.request.urlretrieve(ps_script_url, ps_script_path)
+        command = "powershell.exe -noprofile -executionpolicy bypass -file " + str(
+            ps_script_path
+        )
+        subprocess.call(command, shell=True)
+    except Exception as e:
+        print(e.args[0])
+
+
+def install_chocolatey_list(choco_install_list):
+    print("Instalando programas padrão...")
+    try:
+        for programa in choco_install_list:
+            subprocess.call("choco install -y " + programa)
+    except Exception as e:
+        print(e.args[0])
+
 
 def download_file_from_google_drive(self, id, destination):
     def get_confirm_token(response):
@@ -31,9 +56,9 @@ def download_file_from_google_drive(self, id, destination):
 
     save_response_content(response, destination)
 
+
 def download_install_google(nome, id, file_name, cmd):
-    path_local = Path(".")
-    print(f'Instalando {nome}...')
+    print(f"Instalando {nome}...")
     file_path = path_local / file_name
     try:
         download_file_from_google_drive(id, file_path)
@@ -41,9 +66,9 @@ def download_install_google(nome, id, file_name, cmd):
     except Exception as e:
         print(e.args[0])
 
+
 def download_install_google_zip(nome, id, file_name, cmd):
-    path_local = Path(".")
-    print(f'Instalando {nome}...')
+    print(f"Instalando {nome}...")
     file_path = path_local / file_name
     try:
         download_file_from_google_drive(id, file_path)
