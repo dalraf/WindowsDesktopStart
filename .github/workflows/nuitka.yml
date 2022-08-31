@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install nuitka zstandard ordered-set requests gdown
+        pip install nuitka zstandard ordered-set gdown
     - name: build with nuitka
       run: |
         python -m nuitka --mingw64 --assume-yes-for-downloads --onefile WindowsDesktopStart.py

@@ -1,4 +1,3 @@
-import requests
 import subprocess
 import zipfile
 from vars import path_local
