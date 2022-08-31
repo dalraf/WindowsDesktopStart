@@ -1,4 +1,5 @@
 import urllib.request
+import shutil
 from vars import (
     ps_script_name,
     ps_script_url,
@@ -33,6 +34,8 @@ def install_chocolatey():
 
 
 def install_chocolatey_program(programa, cmd):
+    if not shutil.which("choco"):
+        install_chocolatey()
     print(f'Instalando {programa}')
     try:
         execute("choco install -y " + cmd)
