@@ -22,5 +22,5 @@ sisbr20_file_name = "Sisbr2.0.exe"
 citrix_google_id = "19o1eGqGL6xR1B9b3VYunea4zzYe3Heb9"
 citrix_file_name = "Citrix10.zip"
 
-path_local = Path("./downloads")
+path_local = Path("./downloads").absolute()
 path_local.mkdir(parents=True, exist_ok=True)

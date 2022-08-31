@@ -36,32 +36,42 @@ def install_chocolatey():
 def install_chocolatey_program(programa, cmd):
     if not shutil.which("choco"):
         install_chocolatey()
-    print(f'Instalando {programa}')
+    print(f"Instalando {programa}")
     try:
         execute("choco install -y " + cmd)
     except Exception as e:
         print(e.args[0])
 
+
 def install_google_chrome():
-    install_chocolatey_program('Chrome', 'googlechrome')
+    install_chocolatey_program("Chrome", "googlechrome")
+
 
 def install_firefox():
-    install_chocolatey_program('Firefox', 'firefox')
+    install_chocolatey_program("Firefox", "firefox")
+
 
 def install_spark():
-    install_chocolatey_program('Spark', 'spark')
+    install_chocolatey_program("Spark", "spark")
+
 
 def install_java():
-    install_chocolatey_program('Java 8 32bits', 'jre8 -PackageParameters "/exclude:64" -y')
+    install_chocolatey_program(
+        "Java 8 32bits", 'jre8 -PackageParameters "/exclude:64" -y'
+    )
+
 
 def install_teamviewer():
-    install_chocolatey_program('Teamviewer', 'teamviewer')
+    install_chocolatey_program("Teamviewer", "teamviewer")
+
 
 def install_anydesk():
-    install_chocolatey_program('Anydesk', 'anydesk.install')
+    install_chocolatey_program("Anydesk", "anydesk.install")
+
 
 def install_anydesk():
-    install_chocolatey_program('AdobeReader', 'adobereader')
+    install_chocolatey_program("AdobeReader", "adobereader")
+
 
 # Instalacao do Caixa
 def install_caixa():
@@ -76,7 +86,7 @@ def install_caixa():
 
 # Instalacao do Adobe Air
 def install_adobeair():
-    adobeair_file_path = path_local / adobeair_file_name
+    adobeair_file_path = (path_local / adobeair_file_name).absolute()
     download_install_google(
         "Adobe Air",
         adobeair_google_id,
@@ -87,7 +97,7 @@ def install_adobeair():
 
 # Instalacao do Sisbr2.0
 def install_sisbr20():
-    sisbr20_file_path = path_local / sisbr20_file_name
+    sisbr20_file_path = (path_local / sisbr20_file_name).absolute()
     download_install_google(
         "Sisbr 2.0",
         sisbr20_google_id,
@@ -98,7 +108,9 @@ def install_sisbr20():
 
 # Instalacao Citrix10
 def install_citrix10():
-    citrix_path_execution = path_local / "Citrix10" / "Versao 10.1" / "PN_10_1.msi"
+    citrix_path_execution = (
+        path_local / "Citrix10" / "Versao 10.1" / "PN_10_1.msi"
+    ).absolute()
     download_install_google_zip(
         "Citrix10",
         citrix_google_id,
