@@ -80,7 +80,7 @@ def install_caixa():
         "Caixa",
         caixa_google_id,
         caixa_file_name,
-        f"java -jar  {caixa_file_path}",
+        f'java -jar  "{caixa_file_path}"',
     )
 
 
@@ -115,5 +115,5 @@ def install_citrix10():
         "Citrix10",
         citrix_google_id,
         citrix_file_name,
-        f"msiexec /i {citrix_path_execution}",
+        f'msiexec /i "{citrix_path_execution}"',
     )
