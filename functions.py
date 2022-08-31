@@ -8,6 +8,7 @@ def execute(cmd):
     if platform.system() == 'Linux':
         print(cmd)
     else:
+        print(cmd)
         subprocess.call(cmd, cwd=path_local, shell=True)
 
 
