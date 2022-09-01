@@ -73,6 +73,14 @@ def install_anydesk():
     install_chocolatey_program("AdobeReader", "adobereader")
 
 
+def install_7zip():
+    install_chocolatey_program("7Zip", "7zip.install")
+
+
+def install_notepadplusplus():
+    install_chocolatey_program("Notepad++", "notepadplusplus")
+
+
 # Instalacao do Caixa
 def install_caixa():
     caixa_file_path = (path_local / caixa_file_name).absolute()

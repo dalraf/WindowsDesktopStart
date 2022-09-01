@@ -10,34 +10,36 @@ from instalacao import (
     install_sisbr20,
     install_citrix10,
     install_caixa,
+    install_7zip,
+    install_notepadplusplus
 )
 
 menu = [
-    ["1", "- Instalar Chocolatey", install_chocolatey],
-    ["2", "- Instalar Google Chrome", install_google_chrome],
-    ["3", "- Instalar Firefox", install_firefox],
-    ["4", "- Instalar Java", install_java],
-    ["5", "- Instalar Spark", install_spark],
-    ["6", "- Instalar Anydesk", install_anydesk],
-    ["7", "- Instalar Teamviewer", install_teamviewer],
-    ["8", "- Instalar Adobe Air", install_adobeair],
-    ["9", "- Instalar Sisbr2.0", install_sisbr20],
-    ["10", "- Instalar Citrix 10", install_citrix10],
-    ["11", "- Instalar Caixa", install_caixa],
+    ["Chocolatey", install_chocolatey],
+    ["Google Chrome", install_google_chrome],
+    ["Firefox", install_firefox],
+    ["Java", install_java],
+    ["Spark", install_spark],
+    ["Anydesk", install_anydesk],
+    ["Teamviewer", install_teamviewer],
+    ["Adobe Air", install_adobeair],
+    ["7zip", install_7zip],
+    ["Notepad++", install_notepadplusplus],
+    ["Sisbr2.0", install_sisbr20],
+    ["Citrix 10", install_citrix10],
+    ["Caixa", install_caixa],
 ]
 
 while(True):
-    for i in menu:
-        print(i[0], i[1])
-    print('12 - Instalar tudo')
+    for indice, value in enumerate(menu):
+        print(indice, '- Instalar ', value[0],)
+    print('99 - Instalar tudo')
 
     status = input("Digite a opção desejada:")
 
-    if status == '12':
+    if status == '99':
         for i in menu:
-            i[2]()
+            i[1]()
     else:
-        for i in menu:
-            if status == i[0]:
-                i[2]()
+        menu[int(status)][1]()
 
