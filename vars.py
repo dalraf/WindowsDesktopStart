@@ -6,6 +6,9 @@ from pathlib import Path
 ps_script_url = "https://community.chocolatey.org/install.ps1"
 ps_script_name = "install_chocolatey.ps1"
 
+#choco cmd path
+choco_path = 'C:\\ProgramData\\Chocolatey\\choco.exe'
+
 # Parametros Caixa
 caixa_google_id = "1u0JnYuLxxcOgMTU5iYwMR20SOwBq3vaB"
 caixa_file_name = "Setup.jar"

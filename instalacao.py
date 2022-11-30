@@ -12,6 +12,7 @@ from vars import (
     citrix_google_id,
     citrix_file_name,
     path_local,
+    choco_path,
 )
 from functions import (
     download_install_google,
@@ -31,11 +32,8 @@ def install_chocolatey():
 
 
 def install_chocolatey_program(programa, cmd):
-    if not shutil.which("choco"):
-        install_chocolatey()
-    print(f"Instalando {programa}")
     try:
-        execute("choco install -y " + cmd)
+        execute(f"{choco_path} install -y " + cmd)
     except Exception as e:
         print(e.args[0])
 
