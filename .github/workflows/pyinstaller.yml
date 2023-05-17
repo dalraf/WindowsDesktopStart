@@ -25,7 +25,7 @@ jobs:
         python -m PyInstaller WindowsDesktopStart.py
     - uses: actions/upload-artifact@v2
       with:
-        name: startdesktop-artifact
+        name: WindowsDesktopStart-artifact
         path: ./dist
     
   release:
@@ -36,13 +36,10 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: startdesktop-artifact
-      
-      - name: ls
-        run: ls -l
+          name: WindowsDesktopStart-artifact
 
       - name: Zip file windows
-        run: zip -r startdesktop.zip ./dist
+        run: zip -r startdesktop.zip ./WindowsDesktopStart
 
       - name: Create Release
         id: create_release
