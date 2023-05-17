@@ -26,7 +26,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: startdesktop-artifact
-        path: dist
+        path: ./dist
     
   release:
     name: Release
@@ -37,9 +37,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: startdesktop-artifact
+      
+      - name: ls
+        run: ls -l
 
       - name: Zip file windows
-        run: zip -r startdesktop.zip dist
+        run: zip -r startdesktop.zip ./dist
 
       - name: Create Release
         id: create_release
