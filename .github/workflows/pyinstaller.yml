@@ -39,7 +39,7 @@ jobs:
           name: WindowsDesktopStart-artifact
 
       - name: Zip file windows
-        run: zip -r startdesktop.zip ./WindowsDesktopStart
+        run: zip -r WindowsDesktopStart.zip ./WindowsDesktopStart
 
       - name: Create Release
         id: create_release
@@ -51,5 +51,5 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            startdesktop.zip
+            WindowsDesktopStart.zip
 
