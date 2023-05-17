@@ -10,7 +10,7 @@ ps_script_name = "install_chocolatey.ps1"
 choco_path = 'C:\\ProgramData\\Chocolatey\\choco.exe'
 
 # Parametros Caixa
-caixa_google_id = "1u0JnYuLxxcOgMTU5iYwMR20SOwBq3vaB"
+caixa_google_id = "1d4LpjFEbgDegClu-nFborph-AQxbjROn"
 caixa_file_name = "Setup.jar"
 
 # Parametros Adobe Air
